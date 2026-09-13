@@ -1,0 +1,26 @@
+services:
+
+  # ============================================================================
+  # Grafana
+  # ============================================================================
+
+  grafana:
+    image: grafana/grafana:12.1.0
+    container_name: dev-grafana
+
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}
+
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+    depends_on:
+      loki:
+        condition: service_healthy
+
+    networks:
+      - dev

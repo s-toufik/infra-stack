@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+export DOCKER_CONTEXT=default
+
 echo "WARNING:"
 echo "This will stop the stack and DELETE all persistent data."
 echo

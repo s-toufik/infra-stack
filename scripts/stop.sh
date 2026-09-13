@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+export DOCKER_CONTEXT=default
+
 echo "Stopping development infrastructure..."
 
 docker compose down

@@ -1,3 +1,5 @@
+export DOCKER_CONTEXT := default
+
 .PHONY: start stop restart status logs pull config reset clean
 
 start:
