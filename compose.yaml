@@ -6,8 +6,6 @@ include:
   - compose/loki.yaml
   - compose/otel-collector.yaml
   - compose/grafana.yaml
-  - compose/qwen3.yaml
-
 
 # ==============================================================================
 # Volumes
